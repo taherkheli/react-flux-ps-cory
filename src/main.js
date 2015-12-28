@@ -1,8 +1,10 @@
 $ = jQuery = require('jquery');
 var React = require('react');
 var Home = require('./components/homePage');
+var Authors = require('./components/authors/authorsPage');
 var About = require('./components/about/aboutPage');
 var Header = require('./components/common/header');
+
 
 (function(win){
   "use strict";
@@ -15,6 +17,9 @@ var Header = require('./components/common/header');
         case 'about':
           Child = About;
           break;
+        case 'authors':
+            Child = Authors;
+            break;
         default:
           Child = Home;
       }
