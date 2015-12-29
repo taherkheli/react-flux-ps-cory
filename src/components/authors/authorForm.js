@@ -7,13 +7,13 @@ var AuthorForm = React.createClass({
     return (
       <form>
         <h1>Manage Author</h1>
-        <input
+        <TextInput
           name="firstName"
           label="First Name"
           value={this.props.author.firstName}
           onChange={this.props.onChange} />
 
-        <input
+        <TextInput
           name="lastName"
           label="Last Name"
           value={this.props.author.lastName}
