@@ -1,9 +1,15 @@
 "use strict";
 var React = require('react');
+var Router = require('react-router');
 var AuthorApi = require('../../api/authorApi');
 var AuthorForm = require('./authorForm');
+var Toastr = require('toastr');
 
 var ManageAuthorPage = React.createClass({
+  mixins: [
+    Router.Navigation
+  ],
+
   getInitialState: function() {
     return {
       author: { id: '', firstName: '', lastName: '' }
@@ -20,6 +26,8 @@ var ManageAuthorPage = React.createClass({
   saveAuthor: function(event) {
     event.preventDefault();
     AuthorApi.saveAuthor(this.state.author);
+    Toastr.success('Author saved.');
+    this.transitionTo('authors');
   },
 
   render: function(){
