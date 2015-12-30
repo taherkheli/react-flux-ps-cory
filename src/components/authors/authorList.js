@@ -12,6 +12,7 @@ var AuthorList = React.createClass({
   //in a neater and proper implementation this should probably be in the parent componet and passed down via props
   deleteAuthor: function(id, event) {
     event.preventDefault();
+    //debugger;
     AuthorActions.deleteAuthor(id);
     Toastr.success('Author Deleted');
   },
