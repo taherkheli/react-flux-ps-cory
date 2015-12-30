@@ -22,6 +22,18 @@ var AuthorActions = {
       actionType: ActionTypes.UPDATE_AUTHOR,
       author: updatedAuthor
     });
+  },
+
+  deleteAuthor: function(id) {
+    //if this were real and we had an asynchronous call to the server we'd first immediately fire off a "DELETE_AUTHOR" action to kinda announce to the UI
+    //that we are working on it, subequently "AUTHOR_DELETED" action would have been fired after receiving a callback/acknowledgement from server/webapi so
+    //the UI is always aware where we are at any point in time
+    AuthorApi.deleteAuthor(id);
+
+    Dispatcher.dispatch({
+      actionType: ActionTypes.DELETE_AUTHOR,
+      id: id
+    });
   }
 
 };
