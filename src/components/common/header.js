@@ -12,9 +12,9 @@ var Header = React.createClass({
             <img src="images/pluralsight-logo.png" />
           </Link>
           <ul className="nav navbar-nav">
-            <li><Link to="app">Home</Link></li>
-            <li><Link to="about">About</Link></li>
-            <li><Link to="authors">Authors</Link></li>
+            <li><Link id="home" to="app">Home</Link></li>
+            <li><Link id="about" to="about">About</Link></li>
+            <li><Link id="authors" to="authors">Authors</Link></li>
           </ul>
         </div>
       </nav>
